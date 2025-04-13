@@ -1,119 +1,124 @@
-# **Fireboy & Watergirl Game - README**
+# **🔥💧 Fireboy & Watergirl — Multithreaded Graphical Game in C**
 
-## **Introduction**
-Welcome to the "Fireboy & Watergirl" game! This is a two-player cooperative puzzle platformer where you control Fireboy and Watergirl to navigate through levels, avoid hazards, collect gems, and reach their respective exits. Fireboy cannot touch water, and Watergirl cannot touch lava, so teamwork is essential to win!
-
-This game is implemented in C using the GTK library for graphical rendering and pthreads for multithreading.
+This is a **multithreaded graphical game** inspired by **Fireboy & Watergirl**, developed in **C using GTK for GUI** and **POSIX Threads** for multithreading. Players control Fireboy and Watergirl simultaneously to navigate levels, collect gems, avoid hazards, and reach their respective exits. Cooperation is key to completing levels!
 
 ---
 
-## **Game Objective**
-- Fireboy must collect fire gems and reach the fire exit while avoiding water hazards.
-- Watergirl must collect water gems and reach the water exit while avoiding lava hazards.
-- Both players must work together to activate pressure plates, disable barriers, and complete all levels.
+## 🎮 **Features**
+
+- 🔄 **Multithreaded player controls** for smooth simultaneous movement of Fireboy and Watergirl.
+- ⚠️ **Dynamic hazards** (e.g., moving obstacles) controlled by independent threads.
+- ⭐ **Collectibles** — gather gems before reaching the exits.
+- 🧩 **Randomized map generation** — each level has unique layouts with obstacles, exits, and collectibles.
+- ⏳ **Progress bars** — track gem collection and proximity to exits.
+- ❤️ **Lives system** — lose lives upon mistakes; game ends when lives hit zero.
+- ✅ **Level completion detection** — advance through progressively harder levels.
 
 ---
 
-## **System Requirements**
-1. **Operating System**: Linux (or any system supporting GTK).
-2. **Dependencies**:
-   - GTK 3 or higher.
-   - Pthreads library.
-3. **Compiler**: GCC.
+## 📁 **File Structure**
+
+```
+project_root/
+├── fireboy_watergirl.c         // Main source file
+├── assets/
+│   ├── FireBoy.png
+│   ├── WaterGirl.png
+│   ├── lava.png
+│   ├── water.png
+│   ├── ground.png
+│   ├── fireexit.png
+│   ├── waterexit.png
+│   ├── firegem.png
+│   ├── watergem.png
+│   ├── fence.png
+│   ├── hazard.png
+│   └── barrier.png
+└── README.md
+```
 
 ---
 
-## **How to Compile the Game**
-1. Open a terminal in the directory containing the source file (`game.c`).
-2. Run the following command to compile the program:
+## ⚙️ **Requirements**
+
+- **Operating System**: Linux or any system supporting GTK.
+- **Dependencies**:
+  - GTK 3 or higher.
+  - POSIX Threads (pthreads).
+- **Compiler**: GCC.
+
+---
+
+## 🛠️ **Compilation & Run**
+
+1. Open a terminal in the project directory.
+2. Compile the game using:
    ```bash
-   gcc game.c -o fireboy_watergirl `pkg-config --cflags --libs gtk+-3.0` -lm -lpthread
+   gcc fireboy_watergirl.c -o fireboy_watergirl `pkg-config --cflags --libs gtk+-3.0` -lpthread -lm
    ```
-3. Ensure that all required image files (e.g., `FireBoy.png`, `WaterGirl.png`, `lava.png`, etc.) are in the same directory as the compiled program.
-
----
-
-## **How to Run the Game**
-1. After compiling, run the game using:
+3. Run the game:
    ```bash
    ./fireboy_watergirl
    ```
-2. The game window will open, displaying the grid-based map.
+
+Ensure that all required image files (e.g., `FireBoy.png`, `WaterGirl.png`, etc.) are located in the `assets` directory.
 
 ---
 
-## **Game Controls**
-### **Fireboy (Player 1)**
-- Move up: `W`
-- Move down: `S`
-- Move left: `A`
-- Move right: `D`
+## 🎮 **Controls**
 
-### **Watergirl (Player 2)**
-- Move up: Up Arrow (`↑`)
-- Move down: Down Arrow (`↓`)
-- Move left: Left Arrow (`←`)
-- Move right: Right Arrow (`→`)
-
----
-
-## **Gameplay Instructions**
-1. **Start**:
-   - The game begins with Fireboy and Watergirl placed randomly on the map.
-   - Collect all gems before heading to your respective exits.
-
-2. **Hazards**:
-   - Fireboy must avoid water tiles.
-   - Watergirl must avoid lava tiles.
-   - Both players must avoid moving hazards.
-
-3. **Pressure Plates & Barriers**:
-   - Step on pressure plates to deactivate barriers blocking your path.
-
-4. **Lives**:
-   - Each player starts with 3 lives.
-   - Losing all lives ends the game.
-
-5. **Progress Bars**:
-   - Track your progress on collecting gems and reaching exits via progress bars at the bottom of the screen.
-
-6. **Winning a Level**:
-   - Both players must collect their respective gems and reach their exits to complete a level.
-
-7. **Advancing Levels**:
-   - Complete a level to unlock the next one.
-   - There are 5 levels in total, with increasing difficulty.
-
-8. **Losing Conditions**:
-   - If either player loses all lives or cannot reach their exit, you lose the game.
+| Player     | Action         | Key       |
+|------------|----------------|-----------|
+| Fireboy    | Move Up        | `W`       |
+| Fireboy    | Move Down      | `S`       |
+| Fireboy    | Move Left      | `A`       |
+| Fireboy    | Move Right     | `D`       |
+| Watergirl  | Move Up        | Up Arrow (`↑`)
+| Watergirl  | Move Down      | Down Arrow (`↓`)
+| Watergirl  | Move Left      | Left Arrow (`←`)
+| Watergirl  | Move Right     | Right Arrow (`→`)
 
 ---
 
-## **Game Features**
-1. **Randomized Levels**: Each level generates a unique map layout.
-2. **Multithreading**: Smooth gameplay with separate threads for player movement, hazard movement, and input handling.
-3. **Graphics**: Visual representation of tiles (lava, water, ground), players, gems, hazards, and barriers using GTK's drawing area.
-4. **Cooperative Gameplay**: Requires teamwork between Fireboy and Watergirl for success.
+## 📜 **Game Rules**
+
+1. Players must navigate to their respective exits (Fireboy → Fire Exit; Watergirl → Water Exit).
+2. Collect all gems before heading to the exits.
+3. Avoid hazards:
+   - Fireboy cannot touch water tiles or moving hazards.
+   - Watergirl cannot touch lava tiles or moving hazards.
+4. Players share a pool of lives (3 per player). Losing all lives results in a game over.
+5. Complete all levels to win the game!
 
 ---
 
-## **Troubleshooting**
-1. If you encounter issues with missing images:
-   - Ensure that all required image files are present in the directory where you run the game.
-2. If GTK is not installed:
-   - Install GTK using your package manager (e.g., `sudo apt install libgtk-3-dev` on Ubuntu).
+## 🧩 **Gameplay Instructions**
+
+1. Start the game by running the executable (`./fireboy_watergirl`).
+2. Use the controls to move Fireboy and Watergirl simultaneously.
+3. Navigate through randomized maps featuring:
+   - Lava and water tiles as obstacles.
+   - Gems as collectibles.
+   - Pressure plates to deactivate barriers (in advanced levels).
+4. Progress bars at the bottom of the screen show:
+   - Gem collection progress.
+   - Proximity to exits.
+5. Complete all levels (5 total) to win!
 
 ---
 
-## **Credits**
-This game was developed as a fun project inspired by classic platformer games. Enjoy playing! 🎮
+## 💡 **Tips**
 
---- 
-
-Feel free to modify or extend this README as needed!
-
-Citations:
-[1] https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/52898687/8f773fbc-acef-4964-968e-6f8c24de5607/paste.txt
+- Coordinate movements between Fireboy and Watergirl carefully!
+- Keep an eye on hazards — they move dynamically!
+- Collect all gems before heading to exits; skipping gems prevents level completion.
 
 ---
-Answer from Perplexity: pplx.ai/share
+
+## 🧑‍💻 **Developed Using**
+
+- **C Language**
+- **GTK Library** for graphical rendering.
+- **POSIX Threads** for multithreading.
+
+Enjoy playing! 🎮
