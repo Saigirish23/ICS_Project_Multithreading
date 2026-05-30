@@ -16,7 +16,7 @@ This is a **multithreaded graphical game** inspired by **Fireboy & Watergirl**, 
 
 ---
 
-## 📁 **File Structure**
+## 📁 **File Structure **
 
 ```
 project_root/
@@ -39,9 +39,9 @@ project_root/
 
 ---
 
-## ⚙️ **Requirements**
+## ⚙️ **Requirements **
 
-- **Operating System**: Linux or any system supporting GTK.
+- **Operating System **: Linux or any system supporting GTK.
 - **Dependencies**:
   - GTK 3 or higher.
   - POSIX Threads (pthreads).
@@ -49,7 +49,7 @@ project_root/
 
 ---
 
-## 🛠️ **Compilation & Run**
+## 🛠️ **Compilation & Run **
 
 1. Open a terminal in the project directory.
 2. Compile the game using:
@@ -65,7 +65,7 @@ Ensure that all required image files (e.g., `FireBoy.png`, `WaterGirl.png`, etc.
 
 ---
 
-## 🎮 **Controls**
+## 🎮 **Controls **
 
 | Player     | Action         | Key       |
 |------------|----------------|-----------|
@@ -80,7 +80,7 @@ Ensure that all required image files (e.g., `FireBoy.png`, `WaterGirl.png`, etc.
 
 ---
 
-## 📜 **Game Rules**
+## 📜 **Game Rules **
 
 1. Players must navigate to their respective exits (Fireboy → Fire Exit; Watergirl → Water Exit).
 2. Collect all gems before heading to the exits.
@@ -92,7 +92,7 @@ Ensure that all required image files (e.g., `FireBoy.png`, `WaterGirl.png`, etc.
 
 ---
 
-## 🧩 **Gameplay Instructions**
+## 🧩 **Gameplay Instructions **
 
 1. Start the game by running the executable (`./fireboy_watergirl`).
 2. Use the controls to move Fireboy and Watergirl simultaneously.
@@ -107,7 +107,7 @@ Ensure that all required image files (e.g., `FireBoy.png`, `WaterGirl.png`, etc.
 
 ---
 
-## 💡 **Tips**
+## 💡 **Tips **
 
 - Coordinate movements between Fireboy and Watergirl carefully!
 - Keep an eye on hazards — they move dynamically!
