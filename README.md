@@ -1,4 +1,4 @@
-# **🔥💧 Fireboy & Watergirl — Multithreaded Graphical Game in C**
+# **🔥💧 Elemental Duo — Multithreaded Graphical Game in C**
 
 This is a **multithreaded graphical game** inspired by **Fireboy & Watergirl**, developed in **C using GTK for GUI** and **POSIX Threads** for multithreading. Players control Fireboy and Watergirl simultaneously to navigate levels, collect gems, avoid hazards, and reach their respective exits. Cooperation is key to completing levels!
 
